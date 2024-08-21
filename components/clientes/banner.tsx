@@ -16,7 +16,7 @@ const Banner = () => {
         <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center text-center text-white">
           <h1 className="text-4xl font-bold mb-2">FishFood</h1>
           <span className="text-lg mb-4">Disfruta el sabor del mar en cada bocado</span>
-          <Button>Productos</Button>
+          <Button className="bg-blue-500 hover:bg-blue-600 text-white">Productos</Button>
           
         </div>
         <Separator/>
