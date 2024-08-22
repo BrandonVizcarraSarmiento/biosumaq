@@ -9,37 +9,41 @@ import {
 
 const Beneficios = () => {
   return (
-    <div className="bg-white p-8 rounded-lg shadow-md">
+    <div className="bg-white p-8 rounded-lg shadow-md flex flex-col items-center">
 
-      <Accordion type="single" collapsible>
-        <AccordionItem value="item-1">
-          <AccordionTrigger>Beneficio 1?</AccordionTrigger>
-          <AccordionContent>
-            Respuesta 1
-          </AccordionContent>
-        </AccordionItem>
-      </Accordion>
+  <h2 className="text-center">Beneficios</h2>
 
-      <Accordion type="single" collapsible>
-        <AccordionItem value="item-1">
-          <AccordionTrigger>Beneficio 2?</AccordionTrigger>
-          <AccordionContent>
-            Respuesta 2
-          </AccordionContent>
-        </AccordionItem>
-      </Accordion>
+  <div className="w-full max-w-md"> {/* Max width to limit accordion size */}
+    <Accordion type="single" collapsible>
+      <AccordionItem value="item-1">
+        <AccordionTrigger>Beneficio 1?</AccordionTrigger>
+        <AccordionContent className="text-left">
+          Respuesta 1
+        </AccordionContent>
+      </AccordionItem>
+    </Accordion>
 
-      <Accordion type="single" collapsible>
-        <AccordionItem value="item-1">
-          <AccordionTrigger>Beneficio 3?</AccordionTrigger>
-          <AccordionContent>
-            Respuesta 3
-          </AccordionContent>
-        </AccordionItem>
-      </Accordion>
+    <Accordion type="single" collapsible>
+      <AccordionItem value="item-2">
+        <AccordionTrigger>Beneficio 2?</AccordionTrigger>
+        <AccordionContent className="text-left">
+          Respuesta 2
+        </AccordionContent>
+      </AccordionItem>
+    </Accordion>
 
+    <Accordion type="single" collapsible>
+      <AccordionItem value="item-3">
+        <AccordionTrigger>Beneficio 3?</AccordionTrigger>
+        <AccordionContent className="text-left">
+          Respuesta 3
+        </AccordionContent>
+      </AccordionItem>
+    </Accordion>
+  </div>
 
-    </div>
+</div>
+
 
 
   );
