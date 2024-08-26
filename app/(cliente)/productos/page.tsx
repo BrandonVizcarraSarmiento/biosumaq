@@ -1,4 +1,5 @@
 import Productos from "./components/productos";
+import Slider from "./components/slider";
 
 const SeccionProductos = () => {
     return (
@@ -20,6 +21,7 @@ const SeccionProductos = () => {
                         </div>
                     </div>
                 </div>
+                <Slider />
             </section>
             <section>
 
