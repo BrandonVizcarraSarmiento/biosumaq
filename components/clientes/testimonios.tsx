@@ -15,7 +15,7 @@ const Testimonios = () => {
             </Avatar>
             <div>
               <Terminal className="h-4 w-4" />
-              <AlertTitle>Heads up!</AlertTitle>
+              <AlertTitle>Cliente 1</AlertTitle>
               <AlertDescription>
                 You can add components and dependencies to your app using the CLI.
               </AlertDescription>
@@ -31,7 +31,7 @@ const Testimonios = () => {
             </Avatar>
             <div>
               <Terminal className="h-4 w-4" />
-              <AlertTitle>Heads up!</AlertTitle>
+              <AlertTitle>Cliente 2</AlertTitle>
               <AlertDescription>
                 You can add components and dependencies to your app using the CLI.
               </AlertDescription>
@@ -47,7 +47,7 @@ const Testimonios = () => {
             </Avatar>
             <div>
               <Terminal className="h-4 w-4" />
-              <AlertTitle>Heads up!</AlertTitle>
+              <AlertTitle>Cliente 3</AlertTitle>
               <AlertDescription>
                 You can add components and dependencies to your app using the CLI.
               </AlertDescription>
