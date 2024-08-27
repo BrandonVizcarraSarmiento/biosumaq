@@ -17,7 +17,7 @@ const Navbar = () => {
                 <Link href="/">Inicio</Link>
                 <Link href="/about">Sobre nosotros</Link>
                 <Link href="/productos">Productos</Link>
-                <Link href="/">Contactanos</Link>
+                <Link href="/">Novedades</Link>
             </div>
             <div className="flex sm:hidden">
                 <MenuMobile />

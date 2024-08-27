@@ -2,47 +2,58 @@ import Image from "next/image";
 import { Button } from "../ui/button";
 
 const Footer = () => {
-    return (
-        <div>
-        <section className="grid grid-cols-3 gap-4 p-6 bg-gray-100">
-          <div className="flex justify-center items-center">
-            <Image
-              src="/img/logo.jpg"
-              alt="Success"
-              width={200}
-              height={200}
-              className="rounded-full"
-            />
+  return (
+    <div>
+      <footer className="text-sm text-neutral-500 dark:text-neutral-400">
+        <div className="mx-auto flex w-full max-w-7xl flex-col gap-6 border-t border-neutral-200 px-6 py-12 text-sm md:flex-row md:gap-12 md:px-4 min-[1320px]:px-0 dark:border-neutral-700">
+          <div className="flex gap-4">
+            <div className="flex flex-none items-center justify-center border border-neutral-200 bg-white dark:border-neutral-700 dark:bg-black h-[50px] w-[50px] rounded-lg">
+              <Image
+                src="/img/logo.jpg"
+                alt="Success"
+                width={40}
+                height={40}
+                className="rounded-full"
+              />
+            </div>
+            <span className="uppercase text-black dark:text-white mt-3">FishFood</span>
           </div>
-      
-          <div className="flex justify-center items-center">
-            <ul className="space-y-2 text-lg font-semibold text-center">
-              <li className="hover:text-blue-500 cursor-pointer">Inicio</li>
-              <li className="hover:text-blue-500 cursor-pointer">Sobre Nosotros</li>
-              <li className="hover:text-blue-500 cursor-pointer">Productos</li>
-              <li className="hover:text-blue-500 cursor-pointer">Contáctanos</li>
+          <nav className="flex flex-col md:flex-row gap-4">
+            <ul className="flex flex-col md:flex-grow gap-2">
+              <li>
+                <a className="p-2 text-lg hover:text-black md:text-sm dark:hover:text-neutral-300" href="/">Inicio</a>
+              </li>
+              <li>
+                <a className="p-2 text-lg hover:text-black md:text-sm dark:hover:text-neutral-300" href="/about">Sobre Nosotros</a>
+              </li>
+              <li>
+                <a className="p-2 text-lg hover:text-black md:text-sm dark:hover:text-neutral-300" href="/productos">Productos</a>
+              </li>
+              <li>
+                <a className="p-2 text-lg hover:text-black md:text-sm dark:hover:text-neutral-300" href="/novedades">Novedades</a>
+              </li>
             </ul>
-          </div>
-      
-          <div className="flex flex-col justify-center items-center text-center">
-            <span className="mb-2">Déjanos tu email para estar atento a nuestras novedades</span>
+          </nav>
+          <div className="flex flex-col md:ml-auto">
+            <span className="mb-2 text-neutral-500 dark:text-neutral-400">Déjanos tu email para estar atento a nuestras novedades</span>
             <input
               type="text"
-              className="border border-gray-300 p-2 rounded-lg mb-2"
+              className="border border-neutral-300 p-2 rounded-lg mb-2 text-black dark:border-neutral-700 dark:bg-black dark:text-white"
               placeholder="Tu email"
             />
-            <Button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg">
+            <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg">
               Enviar
-            </Button>
+            </button>
           </div>
-        </section>
-      
-        <section className="text-center py-4 bg-gray-200">
-          <h3>©2024 FishFood. Todos los derechos reservados.</h3>
-        </section>
-      </div>
-      
-    );
+        </div>
+        <div className="border-t border-neutral-200 py-6 text-sm dark:border-neutral-700">
+          <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-1 px-4 md:flex-row md:gap-0 min-[1320px]:px-0">
+            <p>© 2024 FishFood. Todos los derechos reservados.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
 }
 
 export default Footer;

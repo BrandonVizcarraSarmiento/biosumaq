@@ -21,10 +21,9 @@ const SeccionProductos = () => {
                         </div>
                     </div>
                 </div>
-                <Slider />
             </section>
             <section>
-
+                <Slider />
             </section>
         </div>
     );

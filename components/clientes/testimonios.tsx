@@ -4,9 +4,10 @@ import { Terminal } from "lucide-react";
 
 
 const Testimonios = () => {
-    return (
-        <section>
-            <h2 className="text-center text-3xl font-bold mb-6">Testimonios</h2>
+  return (
+    <section className="flex flex-col items-center my-20">
+      <h2 className="text-center text-3xl font-bold mb-6">Testimonios</h2>
+      <div className="w-full max-w-6xl"> {/* ancho maximo */}
         <div>
           <Alert className="flex items-start bg-blue-100 p-4 rounded-lg mb-4">
             <Avatar className="mr-4">
@@ -22,7 +23,7 @@ const Testimonios = () => {
             </div>
           </Alert>
         </div>
-      
+
         <div>
           <Alert className="flex items-start bg-blue-100 p-4 rounded-lg mb-4">
             <Avatar className="mr-4">
@@ -38,7 +39,7 @@ const Testimonios = () => {
             </div>
           </Alert>
         </div>
-      
+
         <div>
           <Alert className="flex items-start bg-blue-100 p-4 rounded-lg mb-4">
             <Avatar className="mr-4">
@@ -54,11 +55,9 @@ const Testimonios = () => {
             </div>
           </Alert>
         </div>
-      </section>
-      
-      
-      
-    );
+      </div>
+    </section>
+  );
 }
 
 export default Testimonios;

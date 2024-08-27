@@ -18,28 +18,26 @@ const imageUrls = [
 
 const Slider = () => {
   return (
-    <div>
+    <div className="mt-10 mb-10 p-4">
       <Carousel
         opts={{
           align: "start",
         }}
-        className="w-full max-w-4xl"
+        className="w-full max-w-6xl mx-auto"
       >
-        <CarouselContent className="flex space-x-4"> {/* Agregamos espacio horizontal */}
+        <CarouselContent>
           {imageUrls.map((url, index) => (
             <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-              <div className="p-2">
-                <Card className="w-80 h-80 m-1"> {/* Agregamos margen alrededor del contenedor */}
-                  <CardContent className="flex items-center justify-center w-full h-full p-1">
-                    <Productos />
-                  </CardContent>
+              <div>
+                <Card>
+                  <Productos />
                 </Card>
               </div>
             </CarouselItem>
           ))}
         </CarouselContent>
         <CarouselPrevious />
-        <CarouselNext />
+        <CarouselNext className="hidden md:block" />
       </Carousel>
     </div>
   );
