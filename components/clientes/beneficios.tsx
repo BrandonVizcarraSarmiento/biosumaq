@@ -7,7 +7,7 @@ import {
 
 const Beneficios = () => {
   return (
-    <div className="flex flex-col items-center my-20">
+    <div className="flex flex-col items-center my-20 p-4">
 
       <h2 className="text-center font-bold text-3xl">Beneficios</h2>
 

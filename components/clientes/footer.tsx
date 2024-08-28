@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -21,16 +22,16 @@ const Footer = () => {
           <nav className="flex flex-col md:flex-row gap-4">
             <ul className="flex flex-col md:flex-grow gap-2">
               <li>
-                <a className="p-2 text-lg hover:text-black md:text-sm dark:hover:text-neutral-300" href="/">Inicio</a>
+                <Link href="/" className="p-2 text-lg hover:text-black md:text-sm dark:hover:text-neutral-300">Inicio</Link>
               </li>
               <li>
-                <a className="p-2 text-lg hover:text-black md:text-sm dark:hover:text-neutral-300" href="/about">Sobre Nosotros</a>
+                <Link href="/about" className="p-2 text-lg hover:text-black md:text-sm dark:hover:text-neutral-300">Sobre Nosotros</Link>
               </li>
               <li>
-                <a className="p-2 text-lg hover:text-black md:text-sm dark:hover:text-neutral-300" href="/productos">Productos</a>
+                <Link href="/productos" className="p-2 text-lg hover:text-black md:text-sm dark:hover:text-neutral-300">Productos</Link>
               </li>
               <li>
-                <a className="p-2 text-lg hover:text-black md:text-sm dark:hover:text-neutral-300" href="/novedades">Novedades</a>
+                <Link href="/novedades" className="p-2 text-lg hover:text-black md:text-sm dark:hover:text-neutral-300">Novedades</Link>
               </li>
             </ul>
           </nav>
@@ -41,9 +42,7 @@ const Footer = () => {
               className="border border-neutral-300 p-2 rounded-lg mb-2 text-black dark:border-neutral-700 dark:bg-black dark:text-white"
               placeholder="Tu email"
             />
-            <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg">
-              Enviar
-            </button>
+            <Button>Enviar</Button>
           </div>
         </div>
         <div className="border-t border-neutral-200 py-6 text-sm dark:border-neutral-700">

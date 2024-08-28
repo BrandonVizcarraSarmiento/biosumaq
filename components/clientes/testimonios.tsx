@@ -5,7 +5,7 @@ import { Terminal } from "lucide-react";
 
 const Testimonios = () => {
   return (
-    <section className="flex flex-col items-center my-20">
+    <section className="flex flex-col items-center my-20 p-4">
       <h2 className="text-center text-3xl font-bold mb-6">Testimonios</h2>
       <div className="w-full max-w-6xl"> {/* ancho maximo */}
         <div>
