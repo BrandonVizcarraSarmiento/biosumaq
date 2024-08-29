@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "@/components/clientes/navbar";
 import Footer from "@/components/clientes/footer";
 import Redes from "@/components/clientes/redes";
+import { ThemeProvider } from "next-themes";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,12 +22,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+      <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
         <Navbar />
         <Redes />
         <main>
           {children}
         </main>
         <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

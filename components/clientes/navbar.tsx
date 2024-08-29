@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import MenuMobile from "./menuMobile";
-
+import ToggleTheme from "./toggleTheme";
 
 const Navbar = () => {
     const router = useRouter()
@@ -18,6 +18,7 @@ const Navbar = () => {
                 <Link href="/about" className="hover:text-primary">Sobre nosotros</Link>
                 <Link href="/productos" className="hover:text-primary">Productos</Link>
                 <Link href="/novedades" className="hover:text-primary">Novedades</Link>
+                <ToggleTheme />
             </div>
             <div className="flex sm:hidden">
                 <MenuMobile />
