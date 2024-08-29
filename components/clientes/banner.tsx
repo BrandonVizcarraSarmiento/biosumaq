@@ -59,7 +59,7 @@ const Banner = () => {
       </svg>
 
       {/* Imagen centrada */}
-      <div className="relative z-10">
+      <div className="relative z-5">
         <Image
           src="/img/hamburguesa.png"
           alt="Hamburguesa"
