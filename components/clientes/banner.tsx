@@ -1,5 +1,8 @@
+"use client"
 import Image from "next/image";
 import { Button } from "../ui/button";
+import Productos from "@/app/(cliente)/productos/components/productos";
+import Link from 'next/link';
 
 const Banner = () => {
   return (
@@ -77,7 +80,10 @@ const Banner = () => {
         <span className="text-lg md:text-xl mb-4 font-light text-white">
           Disfruta el sabor del mar en cada bocado
         </span>
-        <Button>Productos</Button>
+        <Button>
+          <Link href="/productos">
+            Productos
+          </Link></Button>
       </div>
     </div>
   );
