@@ -5,7 +5,7 @@ const Info = () => {
     return (
         <div className="w-full max-w-7xl mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center my-20 mx-20">
-                <Card className="flex flex-col items-center text-center space-y-2 hover:border-primary transition-colors duration-300">
+                <Card className="flex flex-col items-center text-center space-y-2 hover:border-primary transition-colors duration-300 bg-slate-200">
                     <CardContent>
                         <Image src="/img/mision.svg" width={300} height={300} alt="imagen de misión" className="h-64 w-64 mx-auto" />
                     </CardContent>
@@ -15,7 +15,7 @@ const Info = () => {
                         </p>
                     </CardFooter>
                 </Card>
-                <Card className="flex flex-col items-center text-center space-y-2 hover:border-primary transition-colors duration-300">
+                <Card className="flex flex-col items-center text-center space-y-2 hover:border-primary transition-colors duration-300 bg-slate-200">
                     <CardContent>
                         <Image src="/img/vision.svg" width={300} height={300} alt="imagen de visión" className="h-64 w-64 mx-auto" />
                     </CardContent>
