@@ -17,26 +17,26 @@ const Footer = () => {
                 className="rounded-full"
               />
             </div>
-            <span className="uppercase text-black dark:text-white mt-3">FishFood</span>
+            <span className="uppercase text-black text-xl dark:text-white mt-3 ">FishFood</span>
           </div>
           <nav className="flex flex-col md:flex-row gap-4">
             <ul className="flex flex-col md:flex-grow gap-2">
               <li>
-                <Link href="/" className="p-2 text-lg hover:text-black md:text-sm dark:hover:text-neutral-300">Inicio</Link>
+                <Link href="/" className="p-2 text-lg hover:text-black md:text-sm dark:hover:text-neutral-300 dark:text-white dark:font-bold">Inicio</Link>
               </li>
               <li>
-                <Link href="/about" className="p-2 text-lg hover:text-black md:text-sm dark:hover:text-neutral-300">Sobre Nosotros</Link>
+                <Link href="/about" className="p-2 text-lg hover:text-black md:text-sm dark:hover:text-neutral-300 dark:text-white dark:font-bold">Sobre Nosotros</Link>
               </li>
               <li>
-                <Link href="/productos" className="p-2 text-lg hover:text-black md:text-sm dark:hover:text-neutral-300">Productos</Link>
+                <Link href="/productos" className="p-2 text-lg hover:text-black md:text-sm dark:hover:text-neutral-300 dark:text-white dark:font-bold">Productos</Link>
               </li>
               <li>
-                <Link href="/novedades" className="p-2 text-lg hover:text-black md:text-sm dark:hover:text-neutral-300">Novedades</Link>
+                <Link href="/novedades" className="p-2 text-lg hover:text-black md:text-sm dark:hover:text-neutral-300 dark:text-white dark:font-bold">Novedades</Link>
               </li>
             </ul>
           </nav>
           <div className="flex flex-col md:ml-auto">
-            <span className="mb-2 text-neutral-500 dark:text-neutral-400">Déjanos tu email para estar atento a nuestras novedades</span>
+            <span className="mb-2 text-neutral-500  dark:text-white dark:font-bold">Déjanos tu email para estar atento a nuestras novedades</span>
             <input
               type="text"
               className="border border-neutral-300 p-2 rounded-lg mb-2 text-black dark:border-neutral-700 dark:bg-black dark:text-white"

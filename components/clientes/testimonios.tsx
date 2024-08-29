@@ -9,7 +9,7 @@ const Testimonios = () => {
       <h2 className="text-center text-3xl font-bold mb-6">Testimonios</h2>
       <div className="w-full max-w-6xl"> {/* ancho maximo */}
         <div>
-          <Alert className="flex items-start bg-blue-100 p-4 rounded-lg mb-4">
+          <Alert className="flex items-start bg-blue-100 p-4 rounded-lg mb-4 dark:text-white dark:bg-transparent">
             <Avatar className="mr-4">
               <AvatarImage src="/img/iconoPerfil.jpg" />
               <AvatarFallback>CN</AvatarFallback>
@@ -25,7 +25,7 @@ const Testimonios = () => {
         </div>
 
         <div>
-          <Alert className="flex items-start bg-blue-100 p-4 rounded-lg mb-4">
+          <Alert className="flex items-start bg-blue-100 p-4 rounded-lg mb-4 dark:text-white dark:bg-transparent">
             <Avatar className="mr-4">
               <AvatarImage src="/img/iconoPerfil.jpg" />
               <AvatarFallback>CN</AvatarFallback>
@@ -41,7 +41,7 @@ const Testimonios = () => {
         </div>
 
         <div>
-          <Alert className="flex items-start bg-blue-100 p-4 rounded-lg mb-4">
+          <Alert className="flex items-start bg-blue-100 p-4 rounded-lg mb-4 dark:text-white dark:bg-transparent">
             <Avatar className="mr-4">
               <AvatarImage src="/img/iconoPerfil.jpg" />
               <AvatarFallback>CN</AvatarFallback>
