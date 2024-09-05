@@ -6,7 +6,7 @@ const EventoPrincipal = () => {
   return (
     <div className="w-full max-w-6xl mx-auto px-4 my-10">
     <div className="relative rounded-md border-2 border-gray-50 hover:border-black transition-colors duration-300 dark:border-black dark:hover:border-white">
-      <Link href="/" className="block">
+      <Link href="/infonovedades" className="block">
         <div className="relative">
           <Image
             src="/img/feritac.avif"
