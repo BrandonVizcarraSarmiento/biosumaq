@@ -1,9 +1,14 @@
+import Navbar from "@/components/clientes/navbar";
 import Productos from "./components/productos";
 import Slider from "./components/slider";
+import Redes from "@/components/clientes/redes";
+import Footer from "@/components/clientes/footer";
 
 const SeccionProductos = () => {
     return (
         <div>
+            <Navbar />
+            <Redes />
             <section className="flex flex-col items-center p-4">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-7xl w-full">
                     {/* Columna izquierda: imagen grande */}
@@ -25,6 +30,7 @@ const SeccionProductos = () => {
             <section>
                 <Slider />
             </section>
+            <Footer />
         </div>
     );
 }
