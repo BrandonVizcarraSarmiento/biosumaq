@@ -2,6 +2,7 @@
 
 import { Avatar } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
 
 const PageDashboard = () => {
@@ -18,26 +19,28 @@ const PageDashboard = () => {
                 </div>
 
                 {/* Opciones de navegación centradas */}
-                <nav className="space-y-2 px-4 flex-1 flex flex-col">
-                    <a href="#" className="flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded">
+                <nav className="space-y-2 px-4 flex-1 flex flex-col text-white ">
+
+                    <a href="#" className="flex items-center p-2  hover:bg-gray-200 rounded">
                         Productos
                     </a>
-                    <a href="#" className="flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded">
+                    <a href="#" className="flex items-center p-2  hover:bg-gray-200 rounded">
                         Eventos
                     </a>
-                    <a href="#" className="flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded">
+                    <a href="#" className="flex items-center p-2  hover:bg-gray-200 rounded">
                         Banner
                     </a>
-                    <a href="#" className="flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded">
+                    <a href="#" className="flex items-center p-2  hover:bg-gray-200 rounded">
                         Redes
                     </a>
-                    <a href="#" className="flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded">
+                    <a href="#" className="flex items-center p-2  hover:bg-gray-200 rounded">
                         Misión, Visión y Valores
                     </a>
-                    <a href="#" className="flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded">
+                    <a href="#" className="flex items-center p-2  hover:bg-gray-200 rounded">
                         Sobre Nosotros
                     </a>
                 </nav>
+               
 
                 {/* Botón de cerrar sesión en la parte inferior */}
                 <div className="px-4 mb-6">
@@ -46,9 +49,10 @@ const PageDashboard = () => {
                     </Button>
                 </div>
             </aside>
+            
 
             {/* Main Content */}
-            <main className="flex-1 p-6">
+            <main className="flex-1 p-6 border-l">
                 {/* Aquí puedes agregar el contenido principal del dashboard */}
             </main>
         </div>
