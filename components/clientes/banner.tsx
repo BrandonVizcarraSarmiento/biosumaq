@@ -1,7 +1,6 @@
 "use client"
 import Image from "next/image";
 import { Button } from "../ui/button";
-import Productos from "@/app/(cliente)/productos/components/productos";
 import Link from 'next/link';
 
 const Banner = () => {
@@ -73,7 +72,7 @@ const Banner = () => {
       </div>
 
       {/* Texto y botón sobre la imagen */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-20">
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-2">
         <h1 className="mt-8 text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-medium leading-none text-primary">
           FishFood
         </h1>
