@@ -4,4 +4,4 @@ export default function LayaoutDashboard({children}: {children: React.ReactNode;
             {children}
         </div>
     );
-}
+}   
