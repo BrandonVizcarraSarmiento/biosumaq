@@ -9,6 +9,12 @@
     "id": 2,
     "nombre": "Cliente 2 edit 2",
     "testimonio": "Otro testimonio de ejemplo. edit 2",
-    "avatar": "/img/grano.png"
+    "avatar": "/img/cafe.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Cliente 3 edit 3",
+    "testimonio": "Otro testimonio de ejemplo. edit 2",
+    "avatar": "/img/cafe.jpg"
   }
 ]
