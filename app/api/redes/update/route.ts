@@ -15,16 +15,17 @@ export async function POST(req: NextRequest) {
         if (data[platform]) {
             data[platform] = url;
         } else {
-            return NextResponse.json({ message: 'Plataforma no válida' }, { status: 400 });
+            return NextResponse.json({}, { status: 400 });
         }
 
         // Escribir el archivo JSON actualizado
         fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
 
-        return NextResponse.json({ message: 'Enlace actualizado correctamente' });
+        // Respuesta de éxito
+        return NextResponse.json({});
     } catch (error) {
         console.error("Error en la API de actualización:", error);
-        return NextResponse.json({ message: 'Error al actualizar el enlace' }, { status: 500 });
+        return NextResponse.json({}, { status: 500 });
     }
 }
 
