@@ -1,48 +1,41 @@
-
+"use client"
+import { useState, useEffect } from 'react';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion"
+} from "@/components/ui/accordion";
 
 const Beneficios = () => {
+  const [beneficios, setBeneficios] = useState<any>(null);
+
+  useEffect(() => {
+    const fetchBeneficios = async () => {
+      const response = await fetch('/api/beneficios/get');
+      const data = await response.json();
+      setBeneficios(data);
+    };
+    fetchBeneficios();
+  }, []);
+
   return (
     <div className="flex flex-col items-center my-20 p-4">
-
       <h2 className="text-center font-bold text-3xl">Beneficios</h2>
-
-      <div className="w-full max-w-6xl"> {/* ancho maximo */}
+      <div className="w-full max-w-6xl">
         <Accordion type="single" collapsible>
-          <AccordionItem value="item-1">
-            <AccordionTrigger>Beneficio 1?</AccordionTrigger>
-            <AccordionContent className="text-left">
-              Respuesta 1
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
-
-        <Accordion type="single" collapsible>
-          <AccordionItem value="item-2">
-            <AccordionTrigger>Beneficio 2?</AccordionTrigger>
-            <AccordionContent className="text-left">
-              Respuesta 2
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
-
-        <Accordion type="single" collapsible>
-          <AccordionItem value="item-3">
-            <AccordionTrigger>Beneficio 3?</AccordionTrigger>
-            <AccordionContent className="text-left">
-              Respuesta 3
-            </AccordionContent>
-          </AccordionItem>
+          {beneficios && beneficios.map((beneficio: any, index: number) => (
+            <AccordionItem key={index} value={`item-${index}`}>
+              <AccordionTrigger>{beneficio.pregunta}</AccordionTrigger>
+              <AccordionContent className="text-left">
+                {beneficio.respuesta}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
         </Accordion>
       </div>
-
     </div>
   );
-}
+};
 
 export default Beneficios;
