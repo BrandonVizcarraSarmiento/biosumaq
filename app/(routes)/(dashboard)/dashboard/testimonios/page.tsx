@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import EditSectionTestimonio from "../../components/editTestimonioTab";
+import { ToastProvider } from "@/components/ui/toast"; // Asegúrate de que este componente exista
 
 type Testimonio = {
   id: number;
@@ -14,6 +15,8 @@ type Testimonio = {
 const EditTestimonio = () => {
   const [testimonios, setTestimonios] = useState<Testimonio[]>([]);
   const [editedTestimonios, setEditedTestimonios] = useState<Testimonio[]>([]);
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
+  const [showToast, setShowToast] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -36,8 +39,14 @@ const EditTestimonio = () => {
       body: JSON.stringify({ id, nombre, testimonio, avatar }),
     });
     if (res.ok) {
-      alert("Testimonio guardado correctamente");
+      setToastMessage("Testimonio guardado correctamente");
+    } else {
+      setToastMessage("Error al guardar el testimonio");
     }
+    setShowToast(true);
+    setTimeout(() => {
+      setShowToast(false);
+    }, 3000); // El toast desaparecerá después de 3 segundos
   };
 
   const handleChange = (index: number, field: keyof Testimonio, value: string) => {
@@ -67,37 +76,46 @@ const EditTestimonio = () => {
   };
 
   return (
-    <div className="p-4">
-      <h2 className="text-xl font-bold mb-4">Editar Testimonios</h2>
-      <Tabs>
-        <TabsList>
-          <TabsTrigger value="testimonio-0">Testimonio 1</TabsTrigger>
-          <TabsTrigger value="testimonio-1">Testimonio 2</TabsTrigger>
-        </TabsList>
+    <ToastProvider>
+      <div className="p-4">
+        <h2 className="text-xl font-bold mb-4">Editar Testimonios</h2>
+        <Tabs>
+          <TabsList>
+            <TabsTrigger value="testimonio-0">Testimonio 1</TabsTrigger>
+            <TabsTrigger value="testimonio-1">Testimonio 2</TabsTrigger>
+          </TabsList>
 
-        <TabsContent value="testimonio-0">
-          <EditSectionTestimonio
-            sectionName="Testimonio 1"
-            sectionData={editedTestimonios[0]}
-            previewImage={editedTestimonios[0]?.avatar}
-            handleTextChange={(field, value) => handleChange(0, field as keyof Testimonio, value)}
-            handleFileUpload={(e) => handleImageUpload(0, e)}
-            handleSubmit={() => handleSubmit(0)}
-          />
-        </TabsContent>
+          <TabsContent value="testimonio-0">
+            <EditSectionTestimonio
+              sectionName="Testimonio 1"
+              sectionData={editedTestimonios[0]}
+              previewImage={editedTestimonios[0]?.avatar}
+              handleTextChange={(field, value) => handleChange(0, field as keyof Testimonio, value)}
+              handleFileUpload={(e) => handleImageUpload(0, e)}
+              handleSubmit={() => handleSubmit(0)}
+            />
+          </TabsContent>
 
-        <TabsContent value="testimonio-1">
-          <EditSectionTestimonio
-            sectionName="Testimonio 2"
-            sectionData={editedTestimonios[1]}
-            previewImage={editedTestimonios[1]?.avatar}
-            handleTextChange={(field, value) => handleChange(1, field as keyof Testimonio, value)}
-            handleFileUpload={(e) => handleImageUpload(1, e)}
-            handleSubmit={() => handleSubmit(1)}
-          />
-        </TabsContent>
-      </Tabs>
-    </div>
+          <TabsContent value="testimonio-1">
+            <EditSectionTestimonio
+              sectionName="Testimonio 2"
+              sectionData={editedTestimonios[1]}
+              previewImage={editedTestimonios[1]?.avatar}
+              handleTextChange={(field, value) => handleChange(1, field as keyof Testimonio, value)}
+              handleFileUpload={(e) => handleImageUpload(1, e)}
+              handleSubmit={() => handleSubmit(1)}
+            />
+          </TabsContent>
+        </Tabs>
+
+        {/* Componente Toast */}
+        {showToast && toastMessage && (
+          <div className="fixed bottom-4 right-4 bg-gray-800 text-white py-2 px-4 rounded shadow-lg">
+            {toastMessage}
+          </div>
+        )}
+      </div>
+    </ToastProvider>
   );
 };
 
