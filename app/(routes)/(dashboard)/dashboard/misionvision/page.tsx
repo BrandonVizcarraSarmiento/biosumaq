@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import EditSection from "../../components/EditSection";
-
+import { ToastProvider } from "@/components/ui/toast"; // Asegúrate de que este componente exista
 
 type SectionData = {
   texto: string;
@@ -28,6 +28,9 @@ const EditMisionVision = () => {
     vision: "",
     valores: "",
   });
+
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
+  const [showToast, setShowToast] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -57,8 +60,14 @@ const EditMisionVision = () => {
       }),
     });
     if (res.ok) {
-      alert("Datos guardados correctamente");
+      setToastMessage("Datos guardados correctamente");
+    } else {
+      setToastMessage("Error al guardar los datos");
     }
+    setShowToast(true);
+    setTimeout(() => {
+      setShowToast(false);
+    }, 3000); // El toast desaparecerá después de 3 segundos
   };
 
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>, section: keyof MisionVisionData) => {
@@ -86,61 +95,74 @@ const EditMisionVision = () => {
         };
         reader.readAsDataURL(file);
       } else {
-        alert("Error al subir la imagen");
+        setToastMessage("Error al subir la imagen");
+        setShowToast(true);
+        setTimeout(() => {
+          setShowToast(false);
+        }, 3000);
       }
     }
   };
 
   return (
-    <div className="p-4">
-      <h2 className="text-xl font-bold mb-4">Editar Misión, Visión y Valores</h2>
-      <Tabs>
-        <TabsList>
-          <TabsTrigger value="mision">Misión</TabsTrigger>
-          <TabsTrigger value="vision">Visión</TabsTrigger>
-          <TabsTrigger value="valores">Valores</TabsTrigger>
-        </TabsList>
+    <ToastProvider>
+      <div className="p-4">
+        <h2 className="text-xl font-bold mb-4">Editar Misión, Visión y Valores</h2>
+        <Tabs>
+          <TabsList>
+            <TabsTrigger value="mision">Misión</TabsTrigger>
+            <TabsTrigger value="vision">Visión</TabsTrigger>
+            <TabsTrigger value="valores">Valores</TabsTrigger>
+          </TabsList>
 
-        <TabsContent value="mision">
-          <EditSection
-            sectionName="Misión"
-            sectionData={data.mision}
-            previewImage={previewImages.mision}
-            handleTextChange={(value) =>
-              setData({ ...data, mision: { ...data.mision, texto: value } })
-            }
-            handleFileUpload={(e) => handleFileUpload(e, "mision")}
-            handleSubmit={() => handleSubmit("mision")}
-          />
-        </TabsContent>
+          <TabsContent value="mision">
+            <EditSection
+              sectionName="Misión"
+              sectionData={data.mision}
+              previewImage={previewImages.mision}
+              handleTextChange={(value) =>
+                setData({ ...data, mision: { ...data.mision, texto: value } })
+              }
+              handleFileUpload={(e) => handleFileUpload(e, "mision")}
+              handleSubmit={() => handleSubmit("mision")}
+            />
+          </TabsContent>
 
-        <TabsContent value="vision">
-          <EditSection
-            sectionName="Visión"
-            sectionData={data.vision}
-            previewImage={previewImages.vision}
-            handleTextChange={(value) =>
-              setData({ ...data, vision: { ...data.vision, texto: value } })
-            }
-            handleFileUpload={(e) => handleFileUpload(e, "vision")}
-            handleSubmit={() => handleSubmit("vision")}
-          />
-        </TabsContent>
+          <TabsContent value="vision">
+            <EditSection
+              sectionName="Visión"
+              sectionData={data.vision}
+              previewImage={previewImages.vision}
+              handleTextChange={(value) =>
+                setData({ ...data, vision: { ...data.vision, texto: value } })
+              }
+              handleFileUpload={(e) => handleFileUpload(e, "vision")}
+              handleSubmit={() => handleSubmit("vision")}
+            />
+          </TabsContent>
 
-        <TabsContent value="valores">
-          <EditSection
-            sectionName="Valores"
-            sectionData={data.valores}
-            previewImage={previewImages.valores}
-            handleTextChange={(value) =>
-              setData({ ...data, valores: { ...data.valores, texto: value } })
-            }
-            handleFileUpload={(e) => handleFileUpload(e, "valores")}
-            handleSubmit={() => handleSubmit("valores")}
-          />
-        </TabsContent>
-      </Tabs>
-    </div>
+          <TabsContent value="valores">
+            <EditSection
+              sectionName="Valores"
+              sectionData={data.valores}
+              previewImage={previewImages.valores}
+              handleTextChange={(value) =>
+                setData({ ...data, valores: { ...data.valores, texto: value } })
+              }
+              handleFileUpload={(e) => handleFileUpload(e, "valores")}
+              handleSubmit={() => handleSubmit("valores")}
+            />
+          </TabsContent>
+        </Tabs>
+
+        {/* Componente Toast */}
+        {showToast && toastMessage && (
+          <div className="fixed bottom-4 right-4 bg-gray-800 text-white py-2 px-4 rounded shadow-lg">
+            {toastMessage}
+          </div>
+        )}
+      </div>
+    </ToastProvider>
   );
 };
 
