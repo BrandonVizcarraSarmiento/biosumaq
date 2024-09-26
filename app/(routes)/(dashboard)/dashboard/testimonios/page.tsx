@@ -83,6 +83,7 @@ const EditTestimonio = () => {
           <TabsList>
             <TabsTrigger value="testimonio-0">Testimonio 1</TabsTrigger>
             <TabsTrigger value="testimonio-1">Testimonio 2</TabsTrigger>
+            <TabsTrigger value="testimonio-2">Testimonio 3</TabsTrigger>
           </TabsList>
 
           <TabsContent value="testimonio-0">
@@ -104,6 +105,16 @@ const EditTestimonio = () => {
               handleTextChange={(field, value) => handleChange(1, field as keyof Testimonio, value)}
               handleFileUpload={(e) => handleImageUpload(1, e)}
               handleSubmit={() => handleSubmit(1)}
+            />
+          </TabsContent>
+          <TabsContent value="testimonio-2">
+            <EditSectionTestimonio
+              sectionName="Testimonio 3"
+              sectionData={editedTestimonios[2]}
+              previewImage={editedTestimonios[2]?.avatar}
+              handleTextChange={(field, value) => handleChange(2, field as keyof Testimonio, value)}
+              handleFileUpload={(e) => handleImageUpload(2, e)}
+              handleSubmit={() => handleSubmit(2)}
             />
           </TabsContent>
         </Tabs>
