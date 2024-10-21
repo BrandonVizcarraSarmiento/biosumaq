@@ -1,8 +1,20 @@
+"use client"
+
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import MenuMobileDashboard from "./menuMobileDashboard";
+import { useRouter } from "next/navigation";
+import Cookies from "js-cookie";
 
 const NavbarDashboard = () => {
+    const router = useRouter();
+
+    const handleLogout = () => {
+
+        Cookies.remove("usuario"); 
+        router.push("/login");
+    };
+
     return (
         <div className="flex">
             <aside className="hidden lg:flex w-64 shadow-md flex-col justify-between">
@@ -33,10 +45,17 @@ const NavbarDashboard = () => {
                     <Link href="/dashboard/galeria" className="flex items-center p-2 hover:bg-gray-500 rounded">
                         Galeria
                     </Link>
+                    <Link href="/dashboard/productos" className="flex items-center p-2 hover:bg-gray-500 rounded">
+                        Productos
+                    </Link>
+                    <Link href="/dashboard/novedades" className="flex items-center p-2 hover:bg-gray-500 rounded">
+                        Novedades
+                    </Link>
                 </nav>
                 {/* Botón de cerrar sesión en la parte inferior */}
                 <div className="px-4 mb-6">
-                    <Button className="w-full py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 flex items-center justify-center">
+                    <Button className="w-full py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 flex items-center justify-center"
+                        onClick={handleLogout}>
                         Cerrar Sesión
                     </Button>
                 </div>
