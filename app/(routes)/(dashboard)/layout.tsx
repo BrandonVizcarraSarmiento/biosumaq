@@ -15,11 +15,11 @@ export default function LayaoutDashboard({ children }: { children: React.ReactNo
     if (!correo) {
         return null; // No renderiza nada hasta que el redireccionamiento ocurra
     }
-    
+
     return (
         <div className="flex flex-col min-h-screen lg:flex-row">
             <NavbarDashboard />
-            <main className="flex-1 p-6 border-t lg:border-t-0 lg:border-l">
+            <main className="flex-1 border-t lg:border-t-0 lg:border-l">
                 {children}
             </main>
         </div>

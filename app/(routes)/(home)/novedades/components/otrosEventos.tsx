@@ -27,10 +27,8 @@ const OtrosEventos: React.FC<OtrosEventosProps> = ({ eventos }) => {
             <Link href={`/novedades/${evento.id}`}>
               <img
                 src={evento.imagen}
-                width={300}
-                height={300}
                 alt="imagen del evento"
-                className="h-64 w-64 object-cover"
+                className="h-64 w-full object-cover"
               />
               <CardContent className="max-w-sm mx-auto mt-2">
                 <div className="text-sm text-justify">

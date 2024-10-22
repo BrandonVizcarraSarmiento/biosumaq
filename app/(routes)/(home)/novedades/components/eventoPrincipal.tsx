@@ -14,10 +14,8 @@ const EventoPrincipal: React.FC<EventoPrincipalProps> = ({ evento }) => {
           <div className="relative">
             <img
               src={evento.imagen}
-              width={300}
-              height={300}
               alt="Imagen del evento"
-              className="w-full h-auto rounded-md brightness-50"
+              className="w-full h-full rounded-md brightness-50"
             />
             <h2 className="absolute inset-0 flex items-center justify-center text-white text-3xl md:text-5xl font-bold drop-shadow-md">
               {evento.titulo}
