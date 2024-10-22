@@ -31,6 +31,12 @@ const MenuMobileDashboard = () => {
                 <Link href="/dashboard/galeria" className="flex items-center p-2  hover:bg-gray-500 rounded">
                     Galeria
                 </Link>
+                <Link href="/dashboard/productos" className="flex items-center p-2 hover:bg-gray-500 rounded">
+                    Productos
+                </Link>
+                <Link href="/dashboard/novedades" className="flex items-center p-2 hover:bg-gray-500 rounded">
+                    Novedades
+                </Link>
                 <div className="px-4 mb-6">
                     <Button className="w-full py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 flex items-center justify-center">
                         Cerrar Sesión

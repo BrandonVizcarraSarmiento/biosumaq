@@ -1,22 +1,23 @@
-import * as React from "react"
-import { Card, CardContent } from "@/components/ui/card"
+import * as React from "react";
+import { Card } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel"
+} from "@/components/ui/carousel";
 import Productos from "./productos";
-const imageUrls = [
-  'img/logo.jpg',
-  'img/image2.jpg',
-  'img/image3.jpg',
-  'img/image4.jpg',
-  'img/image5.jpg',
-];
+import { Producto } from "@/types/producto";
+import { useRouter } from 'next/navigation';
 
-const Slider = () => {
+const Slider: React.FC<{ productos: Producto[] }> = ({ productos }) => {
+  const router = useRouter();
+
+  const handleProductoClick = (id: number) => {
+    router.push(`/productos/${id}`);
+  };
+
   return (
     <div className="mt-10 mb-10 p-4">
       <Carousel
@@ -26,11 +27,16 @@ const Slider = () => {
         className="w-full max-w-6xl mx-auto"
       >
         <CarouselContent>
-          {imageUrls.map((url, index) => (
-            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-              <div>
+          {productos.map((producto) => (
+            <CarouselItem key={producto.id} className="md:basis-1/2 lg:basis-1/3">
+              <div onClick={() => handleProductoClick(producto.id)}>
                 <Card>
-                  <Productos />
+                  <Productos
+                    nombre={producto.nombre}
+                    precio={producto.precio}
+                    imagen={producto.imagen}
+                    height="350px"
+                  />
                 </Card>
               </div>
             </CarouselItem>
@@ -41,6 +47,6 @@ const Slider = () => {
       </Carousel>
     </div>
   );
-}
+};
 
 export default Slider;
