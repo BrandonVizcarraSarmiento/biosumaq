@@ -12,7 +12,7 @@ const InfoProducto: React.FC<InfoProductoProps> = ({ nombre, precio, descripcion
         <div className="space-y-4 p-4">
             <div className="space-y-4">
                 <h2 className="font-bold">{nombre}</h2>
-                <p className="px-2 py-1 text-sm text-white bg-blue-500 rounded-full w-fit">{precio}</p>
+                <p className="px-2 py-1 text-sm text-white bg-blue-500 rounded-full w-fit">s/{precio}</p>
             </div>
             <Separator />
             <div>
