@@ -1,7 +1,7 @@
-import { Button } from "@/components/ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Menu } from "lucide-react";
 import Link from "next/link";
+import CerrarSesion from "./cerrarSesion";
 
 const MenuMobileDashboard = () => {
     return (
@@ -38,9 +38,7 @@ const MenuMobileDashboard = () => {
                     Novedades
                 </Link>
                 <div className="px-4 mb-6">
-                    <Button className="w-full py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 flex items-center justify-center">
-                        Cerrar Sesión
-                    </Button>
+                    <CerrarSesion />
                 </div>
             </PopoverContent>
         </Popover>
