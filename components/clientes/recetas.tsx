@@ -6,7 +6,7 @@ const Recetas = () => {
           <img src="/img/logoRecetas.png" alt="Logo de Recetas" width={150} height={50} />
           <h2 className="text-4xl font-bold mb-4">Cocina con Nosotros</h2>
           <div className="flex justify-center">
-            <img src="/img/Receta.png" alt="Imagen de la receta" width={900} height={500} className="mx-auto" />
+            <img src="/img/recetaSinFondo.png" alt="Imagen de la receta" width={900} height={500} className="mx-auto" />
           </div>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mt-4">
             <strong>Hamburguesa</strong>
@@ -37,7 +37,7 @@ const Recetas = () => {
               <li>1/4 de Lechuga</li>
               <li>Limón y Sal a gusto</li>
             </ul>
-            <p className="mt-3 italic">Tip para Mamá: <br /> Agrega sabor a tu ensalada con hierbas frescas como cilantro, perejil, albahaca o menta, y utiliza especias como pimienta, comino o pimentón para añadir un toque extra de sabor sin calorías adicionales.</p>
+            <p className="mt-3  ">Tip para Mamá: <br /> Agrega sabor a tu ensalada con hierbas frescas como cilantro, perejil, albahaca o menta, y utiliza especias como pimienta, comino o pimentón para añadir un toque extra de sabor sin calorías adicionales.</p>
           </div>
           <div className='p-4 sm:p-10'>
             <h3 className="font-bold text-lg">Elaboración</h3>
