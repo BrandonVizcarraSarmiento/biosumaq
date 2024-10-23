@@ -110,7 +110,7 @@ const TablaProductos: React.FC<TablaProductosProps> = ({ productos, setProductos
                     className="w-full md:w-auto"
                 />
                 <Select>
-                    <SelectTrigger className="w-full md:w-[180px]">
+                    <SelectTrigger className="w-full md:w-[240px]">
                         <span>Seleccionar columnas</span>
                     </SelectTrigger>
                     <SelectContent>
@@ -126,7 +126,7 @@ const TablaProductos: React.FC<TablaProductosProps> = ({ productos, setProductos
                     </SelectContent>
                 </Select>
                 <Select onValueChange={(value) => setItemsPerPage(parseInt(value))}>
-                    <SelectTrigger className="w-full md:w-[180px]">
+                    <SelectTrigger className="w-full md:w-[240px]">
                         <span>Filas por página</span>
                     </SelectTrigger>
                     <SelectContent>

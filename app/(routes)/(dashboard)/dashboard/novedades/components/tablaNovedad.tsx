@@ -81,6 +81,15 @@ const TablaNovedad: React.FC<TablaNovedadProps> = ({ novedades, setNovedades }) 
         mostrarToast("La novedad ha sido eliminada.");
     };
 
+    const handleUpdateNovedad = (updatedNovedad: Novedad) => {
+        setNovedades((prev) =>
+            prev.map((novedad) =>
+                novedad.id === updatedNovedad.id ? updatedNovedad : novedad
+            )
+        );
+        mostrarToast("La novedad ha sido actualizada.");
+    };
+
     return (
         <div>
             {showToast && toastMessage && (
@@ -97,7 +106,7 @@ const TablaNovedad: React.FC<TablaNovedadProps> = ({ novedades, setNovedades }) 
                     className="w-full md:w-auto"
                 />
                 <Select>
-                    <SelectTrigger className="w-full md:w-[180px]">
+                    <SelectTrigger className="w-full md:w-[240px]">
                         <span>Seleccionar columnas</span>
                     </SelectTrigger>
                     <SelectContent>
@@ -113,7 +122,7 @@ const TablaNovedad: React.FC<TablaNovedadProps> = ({ novedades, setNovedades }) 
                     </SelectContent>
                 </Select>
                 <Select onValueChange={(value) => setItemsPerPage(parseInt(value))}>
-                    <SelectTrigger className="w-full md:w-[180px]">
+                    <SelectTrigger className="w-full md:w-[240px]">
                         <span>Filas por página</span>
                     </SelectTrigger>
                     <SelectContent>
@@ -148,7 +157,7 @@ const TablaNovedad: React.FC<TablaNovedadProps> = ({ novedades, setNovedades }) 
                             {visibleColumns.acciones && (
                                 <TableCell>
                                     <div className="flex gap-2">
-                                        <EditarNovedad novedad={novedad} onUpdate={() => null}>
+                                        <EditarNovedad novedad={novedad} onUpdate={handleUpdateNovedad}>
                                             <Button variant="outline" size="sm">
                                                 <PencilIcon className="h-4 w-4 mr-2" />
                                                 <span>Editar</span>

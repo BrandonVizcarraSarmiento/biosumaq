@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { Card, CardContent, CardFooter } from "../ui/card";
 import { useEffect, useState } from "react";
 
@@ -30,7 +29,7 @@ const MisionVision = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 justify-items-center my-20">
                 <Card className="flex flex-col items-center text-center space-y-2 hover:border-primary transition-colors duration-300 bg-slate-200 dark:bg-slate-950">
                     <CardContent>
-                        <Image src={data.mision.imagen} width={300} height={300} alt="imagen de misión" className="h-64 w-64 mx-auto" />
+                        <img src={data.mision.imagen} width={300} height={300} alt="imagen de misión" className="h-64 w-64 mx-auto" />
                     </CardContent>
                     <CardFooter className="max-w-sm mx-auto">
                         <p className="text-sm text-justify">
@@ -40,7 +39,7 @@ const MisionVision = () => {
                 </Card>
                 <Card className="flex flex-col items-center text-center space-y-2 hover:border-primary transition-colors duration-300 bg-slate-200 dark:bg-slate-950 ">
                     <CardContent>
-                        <Image src={data.vision.imagen} width={300} height={300} alt="imagen de visión" className="h-64 w-64 mx-auto" />
+                        <img src={data.vision.imagen} width={300} height={300} alt="imagen de visión" className="h-64 w-64 mx-auto" />
                     </CardContent>
                     <CardFooter className="max-w-sm mx-auto">
                         <p className="text-sm my-4 text-justify">
@@ -50,7 +49,7 @@ const MisionVision = () => {
                 </Card>
                 <Card className="flex flex-col items-center text-center space-y-2 hover:border-primary transition-colors duration-300 bg-slate-200 dark:bg-slate-950">
                     <CardContent>
-                        <Image src={data.valores.imagen} width={300} height={300} alt="imagen de valores" className="h-64 w-64 mx-auto" />
+                        <img src={data.valores.imagen} width={300} height={300} alt="imagen de valores" className="h-64 w-64 mx-auto" />
                     </CardContent>
                     <CardFooter className="max-w-sm mx-auto">
                         <p className="text-sm my-4 text-justify">

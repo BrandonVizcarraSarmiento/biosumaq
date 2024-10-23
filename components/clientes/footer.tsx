@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Button } from "../ui/button";
 import Link from "next/link";
 
@@ -9,7 +8,7 @@ const Footer = () => {
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-6 border-t border-neutral-200 px-6 py-12 text-sm md:flex-row md:gap-12 md:px-4 min-[1320px]:px-0 dark:border-neutral-700">
           <div className="flex gap-4">
             <div className="flex flex-none items-center justify-center border border-neutral-200 bg-white dark:border-neutral-700 dark:bg-black h-[50px] w-[50px] rounded-lg">
-              <Image
+              <img
                 src="/img/logo.jpg"
                 alt="Success"
                 width={40}

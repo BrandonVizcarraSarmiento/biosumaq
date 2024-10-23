@@ -10,19 +10,19 @@ export const metadata: Metadata = {
   description: "Somos una empresa de alimentos a base de pescado",
 };
 
-export default function RootLayout({children}: {children: React.ReactNode;}) {
+export default function RootLayout({ children }: { children: React.ReactNode; }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-      <ThemeProvider
+        <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-        <main>
-          {children}
-        </main>
+          <main>
+            {children}
+          </main>
         </ThemeProvider>
       </body>
     </html>

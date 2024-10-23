@@ -1,4 +1,3 @@
-// components/clientes/banner.tsx
 "use client";
 
 import Image from "next/image";
@@ -94,7 +93,6 @@ const Banner = () => {
         </div>
       )}
 
-      {/* Mostrar contenido adicional sólo si hay una imagen */}
       {bannerImage && (
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-2">
           <h1 className="mt-8 text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-medium leading-none text-primary">

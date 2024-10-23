@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -35,13 +34,13 @@ const Redes = () => {
     return (
         <div className="fixed right-4 top-1/2 transform -translate-y-1/2 flex flex-col items-center space-y-5 p-2 rounded-lg shadow-lg z-10">
             <Link href={redes.whatsapp} target="_blank" rel="noopener noreferrer">
-                <Image src="/img/whatsapp.svg" width={30} height={30} alt="Imagen de WhatsApp" />
+                <img src="/img/whatsapp.svg" width={30} height={30} alt="Imagen de WhatsApp" />
             </Link>
             <Link href={redes.instagram} target="_blank" rel="noopener noreferrer">
-                <Image src="/img/instagram.svg" width={30} height={30} alt="Imagen de Instagram" />
+                <img src="/img/instagram.svg" width={30} height={30} alt="Imagen de Instagram" />
             </Link>
             <Link href={redes.facebook} target="_blank" rel="noopener noreferrer">
-                <Image src="/img/facebook.svg" width={30} height={30} alt="Imagen de Facebook" />
+                <img src="/img/facebook.svg" width={30} height={30} alt="Imagen de Facebook" />
             </Link>
         </div>
     );
