@@ -28,20 +28,23 @@ const InfoNovedades = ({ params }: { params: { id: string } }) => {
         <div>
             <Navbar />
             <Redes />
-            <div className="flex flex-col items-center justify-center p-6">
+            <div className="flex flex-col items-center justify-center p-6 my-6 " >
                 <div>
                     <img
                         src={evento.imagen}
                         alt="Imagen del evento"
-                        className="w-[1000px] h-[500px] object-cover mx-auto"
+                        className="w-[1000px] h-[500px] object-cover mx-auto rounded-md"
                     />
                 </div>
-                <div className="mt-4 text-center">
+                <div className="mt-4 text-center w-[1000px]">
                     <h2 className="text-3xl font-bold mb-2">{evento.titulo}</h2>
                     <span className="text-sm text-gray-500">{formatearFecha(evento.fecha)}</span>
-                    <p>{evento.info}</p>
+                    <p className="text-justify">
+                        {evento.info}
+                    </p>
                 </div>
             </div>
+
             <Footer />
         </div>
     );
