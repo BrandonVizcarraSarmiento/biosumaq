@@ -34,7 +34,7 @@ const Footer = () => {
               </li>
             </ul>
           </nav>
-          <div className="flex flex-col md:ml-auto">
+          {/* <div className="flex flex-col md:ml-auto">
             <span className="mb-2 text-neutral-500  dark:text-white dark:font-bold">Déjanos tu email para estar atento a nuestras novedades</span>
             <input
               type="text"
@@ -42,7 +42,8 @@ const Footer = () => {
               placeholder="Tu email"
             />
             <Button>Enviar</Button>
-          </div>
+          </div> */}
+       
         </div>
         <div className="border-t border-neutral-200 py-6 text-sm dark:border-neutral-700">
           <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-1 px-4 md:flex-row md:gap-0 min-[1320px]:px-0">
