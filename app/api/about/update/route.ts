@@ -13,11 +13,10 @@ export async function POST(request: NextRequest) {
   const fileContents = fs.readFileSync(jsonPath, "utf-8");
   const aboutData = JSON.parse(fileContents);
 
-  // Actualizar solo la sección correspondiente
   if (aboutData[section]) {
     aboutData[section].texto = texto;
     if (imagen) {
-      aboutData[section].imagen = imagen; // Actualizar imagen solo si se proporciona
+      aboutData[section].imagen = imagen;
     }
     fs.writeFileSync(jsonPath, JSON.stringify(aboutData, null, 2));
   }

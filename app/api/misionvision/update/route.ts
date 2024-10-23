@@ -14,11 +14,10 @@ export async function POST(request: NextRequest) {
   const fileContents = fs.readFileSync(jsonPath, "utf-8");
   const misionVisionData = JSON.parse(fileContents);
 
-  // Actualizar solo la sección correspondiente
   if (misionVisionData[section]) {
     misionVisionData[section].texto = texto;
     if (imagen) {
-      misionVisionData[section].imagen = imagen; // Actualizar imagen solo si se proporciona
+      misionVisionData[section].imagen = imagen;
     }
     fs.writeFileSync(jsonPath, JSON.stringify(misionVisionData, null, 2));
   }

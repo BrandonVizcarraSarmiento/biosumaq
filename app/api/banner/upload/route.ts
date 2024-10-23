@@ -14,11 +14,10 @@ export async function POST(request: NextRequest) {
   const bytes = await file.arrayBuffer();
   const buffer = Buffer.from(bytes);
 
-  // Asegúrate de que el directorio donde se guardan las imágenes existe.
   const directoryPath = path.join(process.cwd(), "public", "img");
   const filePath = path.join(directoryPath, file.name);
 
-  // Puedes agregar lógica aquí para manejar diferentes tipos si lo deseas.
+  // agregar lógica aquí para manejar diferentes tipos.
   await writeFile(filePath, buffer);
 
   return NextResponse.json({ success: true, filePath: `/img/${file.name}` });

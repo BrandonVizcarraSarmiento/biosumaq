@@ -1,14 +1,12 @@
-import Image from 'next/image';
-
 const Recetas = () => {
   return (
     <div className="p-4">
       <div className="max-w-6xl mx-auto my-20 p-4 border-2 border-black rounded-lg dark:border-white">
         <section className="text-center">
-          <Image src="/img/logoRecetas.png" alt="Logo de Recetas" width={150} height={50} />
+          <img src="/img/logoRecetas.png" alt="Logo de Recetas" width={150} height={50} />
           <h2 className="text-4xl font-bold mb-4">Cocina con Nosotros</h2>
           <div className="flex justify-center">
-            <Image src="/img/Receta.png" alt="Imagen de la receta" width={900} height={500} className="mx-auto" />
+            <img src="/img/Receta.png" alt="Imagen de la receta" width={900} height={500} className="mx-auto" />
           </div>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mt-4">
             <strong>Hamburguesa</strong>
@@ -18,15 +16,15 @@ const Recetas = () => {
         </section>
         <section className="flex justify-around my-4">
           <div className="flex flex-col items-center text-center">
-            <Image src="/img/tiempo.png" alt="Icono de tiempo" width={30} height={30} />
+            <img src="/img/tiempo.png" alt="Icono de tiempo" width={30} height={30} />
             <p>Tiempo <span className="font-semibold">5 min</span></p>
           </div>
           <div className="flex flex-col items-center text-center">
-            <Image src="/img/usuario.png" alt="Icono de usuario" width={30} height={30} />
+            <img src="/img/usuario.png" alt="Icono de usuario" width={30} height={30} />
             <p>Raciones <span className="font-semibold">1 persona</span></p>
           </div>
           <div className="flex flex-col items-center text-center">
-            <Image src="/img/cubiertos-de-restaurante.png" alt="Icono de dificultad" width={30} height={30} />
+            <img src="/img/cubiertos-de-restaurante.png" alt="Icono de dificultad" width={30} height={30} />
             <p>Dificultad <span className="font-semibold">Fácil</span></p>
           </div>
         </section>
@@ -50,7 +48,6 @@ const Recetas = () => {
         </section>
       </div>
     </div>
-
   );
 }
 
