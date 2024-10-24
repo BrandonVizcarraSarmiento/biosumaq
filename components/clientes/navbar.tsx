@@ -21,7 +21,9 @@ const Navbar = () => {
                 <ToggleTheme />
             </div>
             <div className="flex sm:hidden">
+                <ToggleTheme/>
                 <MenuMobile />
+                
             </div>
         </nav>
     );
