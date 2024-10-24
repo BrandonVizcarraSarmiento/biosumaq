@@ -4,8 +4,12 @@ interface ImgProductoProps {
 
 const ImgProducto: React.FC<ImgProductoProps> = ({ imagen }) => {
     return (
-        <div className="flex justify-center items-center">
-            <img src={imagen} width={300} height={300} alt="Imagen del producto" className="rounded-md" />
+        <div className="flex justify-center items-center w-full h-full">
+            <img
+                src={imagen}
+                alt="Imagen del producto"
+                className="w-full h-full object-cover rounded-md"
+            />
         </div>
     );
 };
