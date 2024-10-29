@@ -1,3 +1,4 @@
+// agregarProducto.tsx
 import { ReactNode, useState } from "react";
 import {
     Dialog,
@@ -11,7 +12,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Producto } from "@/types/producto";
-import { useAddProducto } from "@/api/productos/useAddProducto";
+import { addProducto } from "@/api/productos/addProducto";
 import { removeOldestDestacado } from "@/api/productos/useRemoveOldestDestacado";
 
 interface AgregarProductoProps {
@@ -80,7 +81,7 @@ const AgregarProducto = ({
             updatedAt: new Date().toISOString(),
         };
 
-        const success = await useAddProducto(nuevoProducto);
+        const success = await addProducto(nuevoProducto);
 
         if (success) {
             onSave(nuevoProducto);
