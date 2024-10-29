@@ -4,13 +4,13 @@ import React, { useEffect, useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import EditAboutTab from "../../components/editAboutTab";
 import EditSection from "../../components/EditSection";
-import { ToastProvider } from "@/components/ui/toast"; // Asegúrate de tener este componente
+import { ToastProvider } from "@/components/ui/toast";
 
 const EditAbout = () => {
   const [aboutData, setAboutData] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
-  const [toastMessage, setToastMessage] = useState<string | null>(null); // Estado para el mensaje del toast
-  const [showToast, setShowToast] = useState(false); // Estado para controlar la visibilidad del toast
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
+  const [showToast, setShowToast] = useState(false);
   const [files, setFiles] = useState<{ [key: string]: File | null }>({
     seccion1: null,
     seccion2: null,
@@ -54,11 +54,11 @@ const EditAbout = () => {
       if (!res.ok) {
         throw new Error("Error al actualizar la sección");
       }
-      setToastMessage(`Se ha actualizado correctamente la sección ${section}`); // Establecer el mensaje del toast
-      setShowToast(true); // Mostrar el toast
+      setToastMessage(`Se ha actualizado correctamente la sección ${section}`);
+      setShowToast(true);
 
       setTimeout(() => {
-        setShowToast(false); // Ocultar el toast después de unos segundos
+        setShowToast(false);
       }, 3000);
     } catch (err) {
       console.error(err);
@@ -120,7 +120,7 @@ const EditAbout = () => {
   return (
     <ToastProvider>
       <div className="p-4">
-        <h2 className="text-xl font-bold mb-4">Editar "Quienes Somos"</h2>
+        <h2 className="text-xl font-bold mb-4">Editar Quienes Somos</h2>
         <Tabs>
           <TabsList>
             <TabsTrigger value="quienesSomos">Quienes Somos</TabsTrigger>
@@ -157,7 +157,6 @@ const EditAbout = () => {
         </Tabs>
       </div>
 
-      {/* Componente Toast */}
       {showToast && toastMessage && (
         <div className="fixed bottom-4 right-4 bg-gray-800 text-white py-2 px-4 rounded shadow-lg">
           {toastMessage}
