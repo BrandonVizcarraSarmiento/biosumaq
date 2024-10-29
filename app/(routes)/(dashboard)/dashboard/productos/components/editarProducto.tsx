@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Producto } from "@/types/producto";
-import { useEditProducto } from "@/api/productos/useEditProducto";
+import { editProducto } from "@/api/productos/editProducto";
 import { removeOldestDestacado } from "@/api/productos/useRemoveOldestDestacado";
 
 interface EditarProductoProps {
@@ -64,7 +64,7 @@ const EditarProducto = ({ producto, onSave, onUpdateDestacados, productos, child
         };
 
         try {
-            const response = await useEditProducto(producto!, updatedProducto);
+            const response = await editProducto(producto!, updatedProducto);
 
             if (response) {
                 onSave(updatedProducto);

@@ -1,6 +1,6 @@
 import { Producto } from "@/types/producto";
 
-export async function useEditProducto(producto: Producto, updatedProducto: Producto) {
+export async function editProducto(producto: Producto, updatedProducto: Producto) {
     const url = `${process.env.NEXT_PUBLIC_API_URL}/api/productos/${producto.id}`;
 
     try {

@@ -1,4 +1,4 @@
-export async function useDeleteProducto(id: number): Promise<boolean> {
+export async function deleteProducto(id: number): Promise<boolean> {
     const url = `${process.env.NEXT_PUBLIC_API_URL}/api/productos/${id}`;
 
     try {
