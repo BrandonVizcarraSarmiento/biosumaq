@@ -1,4 +1,4 @@
-export async function useDeleteNovedad(id: number): Promise<boolean> {
+export async function deleteNovedad(id: number): Promise<boolean> {
     const url = `${process.env.NEXT_PUBLIC_API_URL}/api/novedades/${id}`;
 
     try {
